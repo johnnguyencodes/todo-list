@@ -14,9 +14,10 @@ export default {
   setup() {
 
     const newTodo = ref('');
+    const todos = ref([]);
 
     const addNewTodo = () => {
-      console.log('form was submitted');
+      console.log(newTodo.value);
     }
 
     const onEnter = () => {
