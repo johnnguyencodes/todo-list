@@ -26,8 +26,9 @@ export default {
 
     return {
       newTodo,
+      todos,
       addNewTodo,
-      onEnter
+      onEnter,
     }
   }
 }
