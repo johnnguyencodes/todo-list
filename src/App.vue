@@ -1,5 +1,10 @@
 <template>
   <h1>Vue 3 Todo App</h1>
+  <form action="">
+    <label for="todo">New Todo</label>
+    <input name="newTodo" type="text">
+    <button>Add New Todo</button>
+  </form>
 </template>
 
 <script>
