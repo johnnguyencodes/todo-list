@@ -5,6 +5,9 @@
     <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text">
     <button @click.prevent="addNewTodo">Add New Todo</button>
   </div>
+  <div v-for="todo in todos">
+
+  </div>
 </template>
 
 <script>
