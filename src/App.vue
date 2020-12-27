@@ -27,6 +27,7 @@ export default {
         done: false,
         content: newTodo.value,
       });
+      newTodo.value = '';
     }
 
     const onEnter = () => {
