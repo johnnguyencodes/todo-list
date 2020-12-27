@@ -30,7 +30,7 @@ export default {
       newTodo.value = '';
     }
 
-    const toggleDone(todo) {
+    const toggleDone = (todo) => {
       todo.done = !todo.done;
     }
 
@@ -42,6 +42,7 @@ export default {
       newTodo,
       todos,
       addNewTodo,
+      toggledone,
       onEnter,
     }
   }
