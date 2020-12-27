@@ -1,8 +1,8 @@
 <template>
   <h1>Vue 3 Todo App</h1>
-  <form v-on:submit="addNewTodo">
+  <form @submit.prevent="addNewTodo">
     <label for="todo">New Todo</label>
-    <input name="newTodo" type="text">
+    <input @keyup.enter="addNewTodo" name="newTodo" type="text">
     <button>Add New Todo</button>
   </form>
 </template>
@@ -10,6 +10,15 @@
 <script>
 
 export default {
+  setup() {
+    const addNewTodo = () => {
+      console.log('form was submitted');
+    }
+
+    return {
+      addNewTodo
+    }
+  }
 }
 </script>
 
