@@ -2,15 +2,19 @@
   <h1>Vue 3 Todo App</h1>
   <div>
     <label for="todo">New Todo</label>
-    <input @keyup.enter="onEnter" name="newTodo" type="text">
+    <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text">
     <button @click.prevent="addNewTodo">Add New Todo</button>
   </div>
 </template>
 
 <script>
+  import { ref } from 'vue';
 
 export default {
   setup() {
+
+    const newTodo = ref('');
+
     const addNewTodo = () => {
       console.log('form was submitted');
     }
@@ -20,7 +24,9 @@ export default {
     }
 
     return {
-      addNewTodo, onEnter
+      newTodo,
+      addNewTodo,
+      onEnter
     }
   }
 }
