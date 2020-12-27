@@ -17,7 +17,7 @@ export default {
     const todos = ref([]);
 
     const addNewTodo = () => {
-      console.log(newTodo.value);
+      todos.value.push(newTodo.value);
     }
 
     const onEnter = () => {
