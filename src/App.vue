@@ -7,7 +7,7 @@
   </div>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
-      <h3 @click="toggleDone(todo)">{{ todo.content }} </h3>
+      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">{{ todo.content }} </h3>
     </li>
   </ul>
 </template>
@@ -42,7 +42,7 @@ export default {
       newTodo,
       todos,
       addNewTodo,
-      toggledone,
+      toggleDone,
       onEnter,
     }
   }
@@ -58,6 +58,7 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+
 input, textarea, button, p, div, section, article, select {
   display: 'block';
   width: 100%;
@@ -65,6 +66,7 @@ input, textarea, button, p, div, section, article, select {
   font-size: 1em;
   margin: 0.5em;
 }
+
 .todo {
   cursor: pointer;
 }
