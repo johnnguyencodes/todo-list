@@ -1,15 +1,28 @@
 <template>
   <h1>Vue 3 Todo App</h1>
-  <form action="">
+  <div>
     <label for="todo">New Todo</label>
-    <input name="newTodo" type="text">
-    <button>Add New Todo</button>
-  </form>
+    <input @keyup.enter="onEnter" name="newTodo" type="text">
+    <button @click.prevent="addNewTodo">Add New Todo</button>
+  </div>
 </template>
 
 <script>
 
 export default {
+  setup() {
+    const addNewTodo = () => {
+      console.log('form was submitted');
+    }
+
+    const onEnter = () => {
+      addNewTodo();
+    }
+
+    return {
+      addNewTodo, onEnter
+    }
+  }
 }
 </script>
 
