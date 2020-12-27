@@ -6,8 +6,8 @@
     <button @click.prevent="addNewTodo">Add New Todo</button>
   </div>
   <ul>
-    <li v-for="todo in todos" :key="todo.id">
-      <h3>{{ todo.content }} </h3>
+    <li v-for="todo in todos" :key="todo.id" class="todo">
+      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">{{ todo.content }} </h3>
     </li>
   </ul>
 </template>
@@ -30,6 +30,10 @@ export default {
       newTodo.value = '';
     }
 
+    const toggleDone = (todo) => {
+      todo.done = !todo.done;
+    }
+
     const onEnter = () => {
       addNewTodo();
     }
@@ -38,6 +42,7 @@ export default {
       newTodo,
       todos,
       addNewTodo,
+      toggleDone,
       onEnter,
     }
   }
@@ -53,6 +58,7 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+
 input, textarea, button, p, div, section, article, select {
   display: 'block';
   width: 100%;
@@ -60,6 +66,7 @@ input, textarea, button, p, div, section, article, select {
   font-size: 1em;
   margin: 0.5em;
 }
+
 .todo {
   cursor: pointer;
 }
