@@ -6,7 +6,7 @@
     <button @click.prevent="addNewTodo">Add New Todo</button>
   </div>
   <ul>
-    <li v-for="todo in todos" :key="todo.id">
+    <li v-for="todo in todos" :key="todo.id" class="todo">
       <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">{{ todo.content }} </h3>
     </li>
   </ul>
