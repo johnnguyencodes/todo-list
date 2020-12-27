@@ -7,7 +7,7 @@
   </div>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
-      <h3>{{ todo.content }} </h3>
+      <h3 @click="toggleDone(todo)">{{ todo.content }} </h3>
     </li>
   </ul>
 </template>
@@ -28,6 +28,10 @@ export default {
         content: newTodo.value,
       });
       newTodo.value = '';
+    }
+
+    const toggleDone(todo) {
+      todo.done = !todo.done;
     }
 
     const onEnter = () => {
