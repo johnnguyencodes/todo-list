@@ -5,9 +5,11 @@
     <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text">
     <button @click.prevent="addNewTodo">Add New Todo</button>
   </div>
-  <div v-for="todo in todos">
-
-  </div>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      <h3>{{ todo.content }} </h3>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -21,6 +23,7 @@ export default {
 
     const addNewTodo = () => {
       todos.value.push({
+        id: Date.now(),
         done: false,
         content: newTodo.value,
       });
