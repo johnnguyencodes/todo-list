@@ -52,8 +52,12 @@ npm run serve
 
 Desktop
 
-<img src="https://user-images.githubusercontent.com/61361957/103187398-0c53e700-4879-11eb-89e2-40512e4c9c4c.jpg" width="600" alt="Desktop screenshot">
+<kbd>
+  <img src="https://user-images.githubusercontent.com/61361957/103187398-0c53e700-4879-11eb-89e2-40512e4c9c4c.jpg" width="600" alt="Desktop screenshot">
+</kbd>
 
 Mobile
 
-<img src="https://user-images.githubusercontent.com/61361957/103187334-d151b380-4878-11eb-9190-70c163831b42.jpg" alt="Mobile screenshot">
+<kbd>
+  <img src="https://user-images.githubusercontent.com/61361957/103187334-d151b380-4878-11eb-9190-70c163831b42.jpg" alt="Mobile screenshot">
+</kbd>
