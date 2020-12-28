@@ -83,18 +83,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.todo {
-  border: 1px black solid;
-  border-radius: 50px;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-.done {
-  text-decoration: line-through;
-}
-</style>
