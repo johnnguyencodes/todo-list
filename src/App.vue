@@ -8,8 +8,9 @@
   </div>
   <ul>
     <li v-for="(todo, index) in todos" :key="todo.id" class="todo">
-      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)"> {{ todo.content }} </h3>
+      <h3 :class="{ done: todo.done }"> {{ todo.content }} </h3>
       <button @click="removeTodo(index)">Remove Todo</button>
+      <button @click="toggleDone(todo)">Toggle Todo</button>
     </li>
   </ul>
 </template>
@@ -93,7 +94,7 @@ input, textarea, button, p, div, section, article, select {
   margin: 0.5em;
 }
 
-.todo {
+button {
   cursor: pointer;
 }
 .done {
