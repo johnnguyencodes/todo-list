@@ -35,6 +35,10 @@ export default {
       todo.done = !todo.done;
     }
 
+    const removeTodo = (index) => {
+      todos.value.splice(index, 1);
+    }
+
     const onEnter = () => {
       addNewTodo();
     }
@@ -44,6 +48,7 @@ export default {
       todos,
       addNewTodo,
       toggleDone,
+      removeTodo,
       onEnter,
     }
   }
