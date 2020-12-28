@@ -1,7 +1,7 @@
 # Todo List App
 > Maintained by: `John Nguyen`
 
-* Developed using VueJS 3 and Composition API
+* Developed with Vue.js 3 and the Composition API
 * Styled with Bootstrap 4
 
 ## Completed Features
