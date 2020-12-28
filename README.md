@@ -38,6 +38,11 @@ cd todo-list
 npm install
 ```
 
+3. Install vue/cli
+```
+npm install -g @vue/cli@latest
+```
+
 3. Start the project in development mode.  Once started, you can view the application by opening http://localhost:8080 in your browser.
 ```
 npm run serve
