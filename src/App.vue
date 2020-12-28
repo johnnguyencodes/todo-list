@@ -7,17 +7,17 @@
     </div>
     <ul class="my-4 mx-0 p-0">
       <li v-for="(todo, index) in todos" :key="todo.id" class="todo d-flex border-dark rounded my-4 py-1 px-3">
-        <div class="col-11 m-0 p-0">
+        <div class="col-lg-11 col-10 m-0 p-0">
           <h3 :class="{ done: todo.done }"> {{ todo.content }} </h3>
         </div>
-        <div class="col-1 d-flex m-0 p-0 justify-content-between align-items-center">
+        <div class="col-lg-1 col-2 d-flex m-0 p-0 justify-content-between align-items-center">
           <span @click="toggleDone(todo)"><i class="far fa-check-circle text-success pointer"></i></span>
           <span @click="removeTodo(index)"><i class="far fa-trash-alt text-danger pointer"></i></span>
         </div>
 
       </li>
       <div class="d-flex justify-content-center">
-        <button @click.prevent="toggleAll" class="btn btn-secondary">Clear Todos</button>
+        <button @click.prevent="toggleAll" class="btn btn-secondary">Toggle All Todos</button>
       </div>
     </ul>
   </div>
