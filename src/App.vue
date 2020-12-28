@@ -6,8 +6,9 @@
     <button @click.prevent="addNewTodo">Add New Todo</button>
   </div>
   <ul>
-    <li v-for="todo in todos" :key="todo.id" class="todo">
-      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">{{ todo.content }} </h3>
+    <li v-for="(todo, index) in todos" :key="todo.id" class="todo">
+      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)"> {{ todo.content }} </h3>
+      <button @click="removeTodo(index)">Remove Todo</button>
     </li>
   </ul>
 </template>
