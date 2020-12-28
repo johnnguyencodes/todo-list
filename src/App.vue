@@ -1,12 +1,12 @@
 <template>
-  <h1 class="text-center mt-3">Vue 3 Todo List</h1>
+  <h1 class="text-center mt-3">Todo List</h1>
   <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3 p-0 my-4">
     <div class="d-flex">
       <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text" class="col-10 col-xl-11 border-right-0">
       <span @click.prevent="addNewTodo" class="col-2 col-xl-1 bg-primary text-white rounded-right d-flex align-items-center justify-content-center m-0 p-0 pointer">Add</span>
     </div>
     <ul class="my-4 mx-0 p-0">
-      <li v-for="(todo, index) in todos" :key="todo.id" class="todo d-flex border-dark rounded my-4 py-1 px-3">
+      <li v-for="(todo, index) in todos" :key="todo.id" class="d-flex border border-dark rounded my-4 py-1 px-3">
         <div class="col-lg-11 col-10 m-0 p-0">
           <h3 :class="{ done: todo.done }"> {{ todo.content }} </h3>
         </div>
