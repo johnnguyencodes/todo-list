@@ -4,6 +4,7 @@
     <label for="todo">New Todo</label>
     <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text">
     <button @click.prevent="addNewTodo">Add New Todo</button>
+    <button @click.prevent="toggleAll">Toggle All Todos</button>
   </div>
   <ul>
     <li v-for="(todo, index) in todos" :key="todo.id" class="todo">
@@ -39,6 +40,24 @@ export default {
       todos.value.splice(index, 1);
     }
 
+    const toggleAll = () => {
+      const totalTodos = todos.value.length;
+      let completedTodos = 0;
+
+      todos.value.forEach((todo) => {
+        if (todo.done === true) {
+          completedTodos++;
+        }});
+
+        todos.value.forEach((todo) => {
+          if (completedTodos === totalTodos) {
+            todo.done = false;
+          } else {
+            todo.done = true
+          }
+        })
+    }
+
     const onEnter = () => {
       addNewTodo();
     }
@@ -49,6 +68,7 @@ export default {
       addNewTodo,
       toggleDone,
       removeTodo,
+      toggleAll,
       onEnter,
     }
   }
