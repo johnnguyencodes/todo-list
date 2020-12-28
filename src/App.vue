@@ -1,18 +1,27 @@
 <template>
-  <h1>Vue 3 Todo App</h1>
-  <div>
-    <label for="todo">New Todo</label>
-    <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text">
-    <button @click.prevent="addNewTodo">Add New Todo</button>
-    <button @click.prevent="toggleAll">Toggle All Todos</button>
+  <h1 class="text-center mt-3">Vue 3 Todo List</h1>
+  <div class="col-10 offset-1 col-xl-8 offset-xl-2 p-0 my-4">
+    <div class="d-flex">
+      <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text" class="col-10 col-xl-11 border-right-0">
+      <span @click.prevent="addNewTodo" class="col-2 col-xl-1 bg-primary text-white rounded-right d-flex align-items-center justify-content-center m-0 p-0 pointer">Add</span>
+    </div>
+    <ul class="my-4 mx-0 p-0">
+      <li v-for="(todo, index) in todos" :key="todo.id" class="todo d-flex border-dark rounded my-4 py-1 px-3">
+        <div class="col-8 col-xl-10 m-0 p-0">
+          <h3 :class="{ done: todo.done }"> {{ todo.content }} </h3>
+        </div>
+        <div class="col-4 col-xl-2 d-flex m-0 p-0 justify-content-around align-items-center">
+          <span @click="removeTodo(index)"><i class="far fa-trash-alt text-danger pointer"></i></span>
+          <span><i class="far fa-edit text-primary pointer"></i></span>
+          <span @click="toggleDone(todo)"><i class="far fa-check-circle text-success"></i></span>
+        </div>
+
+      </li>
+      <div class="d-flex justify-content-center">
+        <button @click.prevent="toggleAll" class="btn btn-secondary">Clear Todos</button>
+      </div>
+    </ul>
   </div>
-  <ul>
-    <li v-for="(todo, index) in todos" :key="todo.id" class="todo">
-      <h3 :class="{ done: todo.done }"> {{ todo.content }} </h3>
-      <button @click="removeTodo(index)">Remove Todo</button>
-      <button @click="toggleDone(todo)">Toggle Todo</button>
-    </li>
-  </ul>
 </template>
 
 <script>
@@ -77,21 +86,9 @@ export default {
 </script>
 
 <style>
-body {
-  font-family: sans-serif;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  font-size: 2em;
-  width: 80%;
-  margin: 0 auto;
-}
-
-input, textarea, button, p, div, section, article, select {
-  display: 'block';
-  width: 100%;
-  font-family: sans-serif;
-  font-size: 1em;
-  margin: 0.5em;
+.todo {
+  border: 1px black solid;
+  border-radius: 50px;
 }
 
 button {
