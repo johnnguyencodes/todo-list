@@ -12,7 +12,7 @@
 
 ## Features To Be Implemented
   1. User can edit a Todo item
-  2. User can st ore data locally using localStorage (stretch)
+  2. User can store data locally using localStorage (stretch)
 
 ## Live Site
 * The live version can be viewed [here](https://todo-list.johnnguyencodes.com)
