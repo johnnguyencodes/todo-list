@@ -2,7 +2,7 @@
   <h1 class="text-center mt-3">Todo List</h1>
   <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3 p-0 my-4">
     <div class="d-flex">
-      <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text" class="col-10 col-xl-11 border-right-0">
+      <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text" class="col-10 col-xl-11 border-right-0" placeholder="Add a new todo...">
       <span @click.prevent="addNewTodo" class="col-2 col-xl-1 bg-primary text-white rounded-right d-flex align-items-center justify-content-center m-0 p-0 pointer">Add</span>
     </div>
     <ul class="my-4 mx-0 p-0">
