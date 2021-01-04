@@ -83,3 +83,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.pointer {
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+}
+</style>
