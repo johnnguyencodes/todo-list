@@ -5,13 +5,15 @@
       <!-- v-model adds change listener to the input field, when there is a change, it automatically updates the ref assigned to newTodo -->
       <input v-model="newTodo" @keyup.enter="onEnter" name="newTodo" type="text" class="col-10 col-xl-11 border-right-0" placeholder="Add a new todo...">
       <!-- @click.prevent adds a click listener to the Add button while also calling event.preventDefault -->
-      <span @click.prevent="addNewTodo" class="col-2 col-xl-1 bg-primary text-white rounded-right d-flex align-items-center justify-content-center m-0 p-0 pointer">Add</span>
+      <button @click.prevent="addNewTodo" class="col-2 col-xl-1 bg-primary text-white rounded-right d-flex align-items-center justify-content-center m-0 p-0 pointer">Add</button>
     </div>
     <ul class="my-4 mx-0 p-0">
       <!-- v-for will repeat the li element for every item in the todos array-->
       <!-- v-bind sets the todos[i] property to the attribute, we can leave off v-bind and just use : instead -->
       <li v-for="(todo, index) in todos" :key="todo.id" class="d-flex border border-dark rounded my-4 py-1 px-3">
         <div class="col-lg-11 col-10 m-0 p-0">
+          <!-- The class attribute is bounded to the done property of the todo.  In the UI, the todo will have the .done class applied if the todo's done property evaluates to true.
+          If it evaluates to false, the .done class will not be applied  -->
           <h3 :class="{ done: todo.done }"> {{ todo.content }} </h3>
         </div>
         <div class="col-lg-1 col-2 d-flex m-0 p-0 justify-content-between align-items-center">
@@ -58,6 +60,7 @@ export default {
     }
 
     const removeTodo = (index) => {
+      // splice will just remove that specific todo from the array
       todos.value.splice(index, 1);
     }
 
@@ -71,8 +74,10 @@ export default {
         }});
 
         todos.value.forEach((todo) => {
+          // if all todos are done, then toggle them all as false
           if (completedTodos === totalTodos) {
             todo.done = false;
+          // if not, then toggle them all as true
           } else {
             todo.done = true
           }
